@@ -1,0 +1,171 @@
+<!--Titanic charts-->
+<!DOCTYPE html>
+{% load static %}
+
+<script>
+    function display(da, loc) {
+        Highcharts.chart(loc, {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Stacked column chart'
+            },
+            xAxis: {
+                categories: ['Dead', 'Survived']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total fruit consumption'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: ( // theme
+                            Highcharts.defaultOptions.title.style &&
+                            Highcharts.defaultOptions.title.style.color
+                        ) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -30,
+                verticalAlign: 'top',
+                y: 25,
+                floating: true,
+                backgroundColor:
+                    Highcharts.defaultOptions.legend.backgroundColor || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                headerFormat: '<b>{point.x}</b><br/>',
+                pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            series: da
+        });
+    };
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function getData(a, b, c) {
+        $.ajax({
+            url: 'chart',
+            data: {feature: a},
+            type: 'get',                   
+            datatype: 'json',
+            success: function(data) {
+                display(data, 'myPieChart1');
+
+                $.ajax({
+                    url: 'chart',
+                    data: {feature: b},
+                    type: 'get',
+                    datatype: 'json',
+                    success: function(data) {
+                        display(data, 'myPieChart2');
+
+                        $.ajax({
+                            url: 'chart',
+                            data: {feature: c},           
+                            type: 'get',
+                            datatype: 'json',
+                            success: function(data) {
+                                display(data, 'myPieChart3');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    };
+
+
+    $(document).ready(function() {
+        getData('Sex', 'Pclass', 'Embarked');
+    });
+
+</script>
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Charts</h1>
+    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
+        The charts below have been customized - for further customization options, please visit the <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Donut Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Sex</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="myPieChart1">
+                    </div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Pclass</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="myPieChart2"></div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Embarked</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="myPieChart3"></div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container-fluid -->

@@ -1,0 +1,73 @@
+{% load static %}
+
+<script>
+    function display(Lat, Lng) {
+        var container = document.getElementById('map');       //지도를 담을 영역의 DOM 레퍼런스
+        var options = {                                       //지도를 생성할 때 필요한 기본 옵션
+	    center: new kakao.maps.LatLng(33.450701, 126.570667),       //지도의 중심좌표.
+	    level: 3                                                    //지도의 레벨(확대, 축소 정도)
+        };
+
+        var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+
+        // 마커가 표시될 위치입니다
+        var markerPosition  = new kakao.maps.LatLng(Lat, Lng);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
+
+        // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+        var iwContent = '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a><a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>',
+            iwPosition = new kakao.maps.LatLng(33.450701, 126.570667);     //인포윈도우 표시 위치입니다
+
+        // 인포윈도우를 생성합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            position : iwPosition,
+            content : iwContent
+        });
+
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker);
+    };
+
+
+    $(document).ready(function() {
+        display(37.48589820119194, 127.0440230033929);       // google map에서 위도, 경도 얻을 수 있음
+
+        $('#geo1').click(function() {                        // 버튼 클릭하면 해당 지역으로 이동하도록 설정
+            display(37.55861940598128, 126.975645043086);    // 영국비자센터
+        });
+
+        $('#geo2').click(function() {
+            display(37.56206289235738, 126.9468124393769);   // 이대
+        });
+    });
+
+</script>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Kakao Map</h1>
+    <button id="geo1">GEO 1</button><button id="geo2">GEO 2</button>
+    <div id="map" style="width: 500px; height: 400px;"></div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+
+
+
+
+
+
+
+

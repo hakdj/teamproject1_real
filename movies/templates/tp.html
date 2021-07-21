@@ -1,0 +1,117 @@
+<!--담당 : 최현수-->
+<!-- 년도별 영화 장르 검색
+해당 년도에 어느 장르의 영화가 많은지 조회-->
+<!DOCTYPE html>
+{% load static %}
+<script>
+    function display(data){
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Number of Movies by Genre'
+            },
+            subtitle: {
+                text: 'Source: <a href="https://en.wikipedia.org/wiki/List_of_genres">Wikipedia!</a>'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Count'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: 'number of genre: <b>{point.y:.1f}</b>'
+            },
+            series: [{
+                name: 'Population',
+                data: data,
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '9px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+    };
+
+//----------------------사용자 입력 후 서버요청 받기-------------------------
+        function getdata(year){
+            $.ajax({
+                url:'chs1',
+                datatype:'JSON',
+                data:{year:year},
+                success:function(data){
+                    display(data);
+                }
+            });
+        };
+
+        $(document).ready(function(){
+            $('#getdata').click(function(){
+                year = $('#year').val();
+                getdata(year);
+            });
+        });
+
+    </script>
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">연도별 영화의 장르 갯수가 궁금하다면, 원하는 연도를 입력하세요.</h1>
+    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
+        The charts below have been customized - for further customization options, please visit the <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <div class="col-xl-10 col-lg-9">
+
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <input type="number" id="year">
+                        <button id="getdata">SEARCH</button>
+                    </div>
+                    <h5>(range: 1912~)</h5>
+
+                    <div id="container"></div>
+                    <hr>
+                    Styling for the area chart can be found in the
+                    <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /.container-fluid -->

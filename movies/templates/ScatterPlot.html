@@ -1,0 +1,132 @@
+<!--재현님 차트-->
+<!DOCTYPE html>
+{% load static %}
+<script>
+    function display1(data){
+        Highcharts.chart('container1', {
+            chart: {
+                type: 'scatter',
+                zoomType: 'xy'
+            },
+            title: {
+                text: '플랫폼별 러닝타임과 IMDb'
+            },
+            subtitle: {
+                text: '서브타이틀적기'
+            },
+            xAxis: {
+                title: {
+                    enabled: true,
+                    text: 'Runtime(min)'
+                },
+                startOnTick: true,
+                endOnTick: true,
+                showLastLabel: true
+            },
+            yAxis: {
+                title: {
+                    text: 'IMDb(0.0~10.0)'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'left',
+                verticalAlign: 'top',
+                x: 100,
+                y: 70,
+                floating: true,
+                backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
+                borderWidth: 1
+            },
+            plotOptions: {
+                scatter: {
+                    marker: {
+                        radius: 5,
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(100,100,100)'
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            marker: {
+                                enabled: false
+                            }
+                        }
+                    },
+                    tooltip: {
+                        headerFormat: '<b>{series.name}</b><br>',
+                        pointFormat: '{point.x} min, {point.y} score'
+                    }
+                }
+            },
+            series: data
+        });
+    };
+
+//----------------------사용자 입력 후 서버요청 받기-------------------------
+    function getdata(ott){
+        $.ajax({
+            url:'sp',
+            data:{ott: ott},
+            type:'get',
+            datatype:'json',
+            success:function(data){
+                display1(data)},
+            error:function(){
+                 alert("getdata실패")}
+        });
+    };
+
+    $(document).ready(function(){
+        $('#bt').click(function(){
+            ott = $('select[name="ott"]').val();
+            getdata(ott);
+        });
+    });
+
+    </script>
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">IMDb별 Runtime별 분포도</h1>
+    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
+        The charts below have been customized - for further customization options, please visit the <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <div class="col-xl-10 col-lg-9">
+
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                    <select name="ott">
+                        <option value="Netflix">Netflix</option>
+                        <option value="Hulu">Hulu</option>
+                        <option value="Prime Video">Prime Video</option>
+                        <option value="Disney+">Disney+</option>
+                    </select>
+                    <button id="bt">SEARCH</button><br>
+                    <div id="container1"></div>
+                    <hr>
+                    Styling for the area chart can be found in the
+                    <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container-fluid -->

@@ -1,0 +1,120 @@
+<!--재현님 차트-->
+<!DOCTYPE html>
+{% load static %}
+
+<script>
+    function display1(data){
+           Highcharts.chart('container2', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: 'OTT플랫폼별 시청연령 영화 개수'
+                },
+                subtitle: {
+                    text: '각 플랫폼 별로 시청연령 영화가 몇 개씩 있는지 확인해보자'
+                },
+                xAxis: {
+                    type: 'category',
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Movie Count'
+                    }
+                },
+                legend: {
+                    enabled: false
+                },
+                tooltip: {
+                    pointFormat: '<b>{point.y} count</b>'
+                },
+                series: [{
+                    name: 'Population',
+                    colorByPoint: true,
+                    data: data,
+                    dataLabels: {
+                        enabled: true,
+                        rotation: 0,
+                        color: '#00000',
+                        align: 'center',
+                        format: '{point.y}',
+                        y: 5, // 10 pixels down from the top
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+                }]
+            });
+    };
+
+//----------------------사용자 입력 후 서버요청 받기-------------------------
+    function getdata(ott){
+        $.ajax({
+                url:'ages',
+                data:{ott:ott},
+                datatype:'JSON',
+                success:function(data){
+                    display1(data)},
+                error:function(){}
+        });
+    };
+
+    $(document).ready(function(){
+        $('#bt').click(function(){
+            ott = $('select[name="ott"]').val();
+            getdata(ott);
+        });
+    });
+
+</script>
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">연령별 영화 개수</h1>
+    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
+        The charts below have been customized - for further customization options, please visit the <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <div class="col-xl-8 col-lg-7">
+
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                    <select name="ott">
+                        <option value="Netflix">Netflix</option>
+                        <option value="Hulu">Hulu</option>
+                        <option value="Prime Video">Prime Video</option>
+                        <option value="Disney+">Disney+</option>
+                    </select>
+                    <button id="bt">SEARCH</button><br>
+                    <div id="container2"></div>
+                    <hr>
+                    Styling for the area chart can be found in the
+                    <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container-fluid -->

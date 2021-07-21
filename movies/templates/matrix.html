@@ -1,0 +1,36 @@
+<!--운기님 차트-->
+<!DOCTYPE html>
+{% load static %}
+<script>
+</script>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">MoviesOnStreamingPlatforms Chart</h1>
+    <p class="mb-4">여기는 운기님이 만드신 차트입니다. cwk.py에서 df불러오기랑 이미지 저장 코드 수정했어요 프로젝트 내 static으로 옮겨야 해서요 <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-xl-8 col-lg-7">
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div id="container2">
+                        <img  src="/static/img/matrix.png" alt=" ">
+                    </div>
+                    <p><cite>MoviesOnStreamingPlatforms</cite></p>
+                    <hr>
+                    Styling for the area chart can be found in the
+                    <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
