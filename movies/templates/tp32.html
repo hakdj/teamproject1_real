@@ -1,7 +1,7 @@
 <!--청하님 차트-->
 <!DOCTYPE html>
 {% load static %}
-    <script>
+<script>
     function display(data){
         Highcharts.setOptions({
     colors: Highcharts.getOptions().colors.map(function (color) {
@@ -150,8 +150,7 @@ var chart = new Highcharts.Chart({
             getdata(ott);
         });
     });
-
-    </script>
+</script>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -159,7 +158,7 @@ var chart = new Highcharts.Chart({
     <h1 class="h3 mb-2 text-gray-800">MoviesOnStreamingPlatforms Chart</h1>
     <p class="mb-4">여기는 청하님이 만드신 차트입니다. <a
             target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-            documentation</a>.</p>
+        documentation</a>.</p>
 
     <!-- Content Row -->
     <div class="row">
@@ -178,7 +177,8 @@ var chart = new Highcharts.Chart({
                         <option value="Prime Video">Prime Video</option>
                         <option value="Disney+">Disney+</option>
                     </select>
-                    <button id="bt">SEARCH</button><br>
+                    <button id="bt">SEARCH</button>
+                    <br>
                     <div id="container"></div>
                     <hr>
                     Styling for the area chart can be found in the

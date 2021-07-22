@@ -9,10 +9,10 @@
                 zoomType: 'xy'
             },
             title: {
-                text: '플랫폼별 러닝타임과 IMDb'
+                text: 'IMDb 지수와 Runtime간 관계 파악'
             },
             subtitle: {
-                text: '서브타이틀적기'
+                text: '플랫폼별 Runtime과 IMDb 산포도 그래프'
             },
             xAxis: {
                 title: {
@@ -87,28 +87,26 @@
         });
     });
 
-    </script>
 
+
+</script>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">IMDb별 Runtime별 분포도</h1>
-    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
-        The charts below have been customized - for further customization options, please visit the <a
-            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-            documentation</a>.</p>
+    <p class="mb-4">OTT 플랫폼을 선택하여 해당 OTT별 영화의 IMDb평점과 Runtime의 분포를 파악하세요.</p>
 
     <!-- Content Row -->
     <div class="row">
 
-        <div class="col-xl-10 col-lg-9">
+        <div class="col-xl-8 col-lg-9">
 
             <!-- Area Chart -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Scatter Plot</h6>
                 </div>
                 <div class="card-body">
                     <select name="ott">
@@ -117,16 +115,34 @@
                         <option value="Prime Video">Prime Video</option>
                         <option value="Disney+">Disney+</option>
                     </select>
-                    <button id="bt">SEARCH</button><br>
+                    <button id="bt">SEARCH</button>
+                    <br>
                     <div id="container1"></div>
                     <hr>
-                    Styling for the area chart can be found in the
-                    <code>/js/demo/chart-area-demo.js</code> file.
+                    Netflix : red, Hulu : yellowgreen, Prime Video : skyblue, Disney+ : blue
                 </div>
             </div>
         </div>
-
+        <div class="col-xl-4 col-lg-5 mb-4">
+            <div class="card shadow mb-8">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">차트 설명</h6>
+                </div>
+                <div class="card-body">
+                    <h6 class="m-0 font-weight-bold text-dark">Scatter Plot(산포도)을 이용한 데이터 분석</h6><br>
+                    <p>선택창에서 플랫폼을 선택하고 'SEARCH'버튼을 클릭하세요.</p>
+                    <p>선택한 OTT에서 Runtime별 IMDb 지수의 분포를 파악할 수 있습니다.</p>
+                    <p>
+                    <li>IMDB 평점 범위 : 최소 0점, 최대 10점</li>
+                    <li>Runtime : 영화 상영 시간. 최대 180분(3시간)까지의 영화를 대상으로 합니다.</li>
+                    </p>
+                    <p>그래프를 통해서 영화의 보편적 상영시간(Runtime)인 1시간~2시간에 산포도가 밀집한 걸 알 수 있습니다.
+                        대체로 IMDB 6점~8점의 구간에 영화가 분포한 것을 확인할 수 있습니다.
+                    </p>
+                    <a target="_blank" rel="nofollow" href="https://github.com/Songgplant">여기에 넣고 싶은 주소를&rarr;</a>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
 <!-- /.container-fluid -->

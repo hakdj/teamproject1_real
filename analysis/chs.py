@@ -1,6 +1,4 @@
 ## 현수님 part
-# def chs1 :
-# 데이터 set에서 연도별로 영화 장르가 몇개씩 있는지 결과 출력
 
 import matplotlib.pyplot as plt;
 import pandas as pd;
@@ -50,6 +48,7 @@ class CHS:
             movie['Language'] = df['Language'][i];
             movie['Runtime'] = df['Runtime'][i];
             data.append(movie);
+
         return data;
 
     def chs3(self):
@@ -66,6 +65,7 @@ class CHS:
             naver['Opening_date'] = df['개봉일'][i];
             naver['Runtime'] = df['상영시간'][i];
             data.append(naver);
+
         return data;
 
 

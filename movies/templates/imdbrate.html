@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-    <script>
+<script>
     function chart1(data){
         Highcharts.chart('container1', {
             chart: {
@@ -10,7 +10,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Netflix 플랫폼의 IMDB 지수 비율'
+                text: 'Netflix 플랫폼의 IMDB 평점 비율'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -26,7 +26,7 @@
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                        format: '<b>{point.name} 점</b>:<br> {point.percentage:.1f} %'
                     }
                 }
             },
@@ -47,7 +47,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Hulu 플랫폼의 IMDB 지수 비율'
+                text: 'Hulu 플랫폼의 IMDB 평점 비율'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -63,7 +63,7 @@
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                        format: '<b>{point.name} 점</b>:<br> {point.percentage:.1f} %'
                     }
                 }
             },
@@ -84,7 +84,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Prime Video 플랫폼의 IMDB 지수 비율'
+                text: 'Prime Video 플랫폼의 IMDB 평점 비율'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -100,7 +100,7 @@
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                        format: '<b>{point.name} 점</b>:<br> {point.percentage:.1f} %'
                     }
                 }
             },
@@ -121,7 +121,7 @@
                 type: 'pie'
             },
             title: {
-                text: 'Disney+ 플랫폼의 IMDB 지수 비율'
+                text: 'Disney+ 플랫폼의 IMDB 평점 비율'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -137,7 +137,7 @@
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                        format: '<b>{point.name} 점</b>:<br> {point.percentage:.1f} %'
                     }
                 }
             },
@@ -186,85 +186,70 @@
             }
         });
     });
-    </script>
 
+</script>
 
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">imdb파이차트2</h1>
-    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
-        The charts below have been customized - for further customization options, please visit the <a
-            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-            documentation</a>.</p>
+    <h1 class="h3 mb-2 text-gray-800">IMDb 비율 확인</h1>
+    <p class="mb-4">OTT 플랫폼별 IMDb 평점의 분포를 비율로 확인합니다.</p>
 
     <!-- Content Row -->
     <div class="row">
 
         <!-- Donut Chart -->
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-xl-3 col-lg-5">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Survival by Sex</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">IMDB in Netflix</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                     <div id="container1">
                     </div>
-                    <hr>
-                    Styling for the donut chart can be found in the
-                    <code>/js/demo/chart-pie-demo.js</code> file.
                 </div>
             </div>
 
         </div>
 
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-xl-3 col-lg-5">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Survival by Pclass</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">IMDB in Hulu</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                     <div id="container2"></div>
-                    <hr>
-                    Styling for the donut chart can be found in the
-                    <code>/js/demo/chart-pie-demo.js</code> file.
                 </div>
             </div>
         </div>
 
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-xl-3 col-lg-5">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Survival by Embarked</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">IMDB in Prime Video</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                     <div id="container3"></div>
-                    <hr>
-                    Styling for the donut chart can be found in the
-                    <code>/js/demo/chart-pie-demo.js</code> file.
                 </div>
             </div>
         </div>
-        <div class="col-xl-4 col-lg-5">
+        <div class="col-xl-3 col-lg-5">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Survival by Embarked</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">IMDB in Disney+</h6>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
                     <div id="container4"></div>
-                    <hr>
-                    Styling for the donut chart can be found in the
-                    <code>/js/demo/chart-pie-demo.js</code> file.
                 </div>
             </div>
         </div>

@@ -1,8 +1,5 @@
 ## 재현님 part
-## def forage :
-# 데이터 set에서 OTT플랫폼별 구분 후 시청연령별 영화 개수 결과 출력
-## def IMDbScatter :
-# 데이터 set에서 OTT플랫폼별 Runtime과 IMDb지수 관계 파악을 위해 데이터 출력
+
 import csv
 import pandas as pd
 from config.settings import DATA_DIRS
@@ -18,7 +15,7 @@ class MyAnalysis:
         setott = df[ott] == 1
         x = df[setott]
 
-        age0count = len(x[ x['Age'] == '0+'])
+        age0count = len(x[x['Age'] == '0+'])
         age7count = len(x[x['Age'] == '7+'])
         age13count = len(x[x['Age'] == '13+'])
         age16count = len(x[x['Age'] == '16+'])
@@ -34,7 +31,7 @@ class MyAnalysis:
             d.append(AgeRange[i])
             d.append(AgeList[i])
             result.append(d)
-        print(result)
+
         return result
 
     def ImdbScatter(self, ott):
@@ -46,8 +43,8 @@ class MyAnalysis:
         x = df[setott & setrun]
 
         scatterdata = []
-        colors = {'Netflix': '#C8FAC8', 'Hulu': '#ED561B', 'Prime Video': '#B4B4FF',
-                  'Disney+': '#FF28A7'}
+        colors = {'Netflix': 'rgba(223, 83, 83, .5)', 'Hulu': 'rgba(71, 209, 71, .5)', 'Prime Video': 'rgba(119, 152, 191, .5)',
+                  'Disney+': 'rgba(0, 0, 230, .5)'}
 
         for i in range(len(x)):
             run_im = []
@@ -74,22 +71,18 @@ class MyAnalysis:
         im5 = newdf[(newdf['IMDb'] >= 8) & (newdf['IMDb'] < 9)]
         im6 = newdf[(newdf['IMDb'] >= 9) & (newdf['IMDb'] <= 10)]
 
-        data = [{
-            'name': '0.0~4.9', 'y': len(im1) / len(newdf) * 100
-        }, {
-            'name': '5.0~5.9', 'y': len(im2) / len(newdf) * 100
-        }, {
-            'name': '6.0~6.9', 'y': len(im3) / len(newdf) * 100
-        }, {
-            'name': '7.0~7.9', 'y': len(im4) / len(newdf) * 100
-        }, {
-            'name': '8.0~8.9', 'y': len(im5) / len(newdf) * 100
-        }, {
-            'name': '9.0~10.0', 'y': len(im6) / len(newdf) * 100
-        }]
+        data = [
+            {'name': '0.0~4.9', 'y': len(im1) / len(newdf) * 100},
+            {'name': '5.0~5.9', 'y': len(im2) / len(newdf) * 100},
+            {'name': '6.0~6.9', 'y': len(im3) / len(newdf) * 100},
+            {'name': '7.0~7.9', 'y': len(im4) / len(newdf) * 100},
+            {'name': '8.0~8.9', 'y': len(im5) / len(newdf) * 100},
+            {'name': '9.0~10.0', 'y': len(im6) / len(newdf) * 100}
+        ]
+
         return data
 
 
 if __name__ == '__main__':
-     MyAnalysis().forage('Netflix')
-     # MyAnalysis().ImdbScatter('Disney+')
+    MyAnalysis().forage('Netflix')
+    # MyAnalysis().ImdbScatter('Disney+')
