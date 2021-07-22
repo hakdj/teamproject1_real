@@ -16,19 +16,20 @@ B반 2조 DATAO팀
 
 [재현님 개별 기능 구현](https://github.com/Songgplant/teamproject1)
 
-[운기님 개별 기능 구현](https://github.com/woonkiCHO/dashboard)
+[운기님 추가 기능 구현중](https://github.com/woonkiCHO/dashboard)
 
-청하님 마무리 작업 중
+[청하님 추가 기능 구현중](https://github.com/taruun0823/teamprojects3)
 
 
 
-#### 0721 18:00 작업상황
+#### 0723 00:00 작업상황
 
-현수님, 운기님, 재현님 기능 통합 완료.
+- 팀원 4명 기능 구현 모두 완료 및 통합 완료. : 통합 후 코드 1차 정리(0723 0000 all codes commit 프로젝트로 재시작, 백업 필요)
 
-통합 후 Django Secret Key 수정했습니다.
+- 청하님, 운기님 추가 기능 필요한 코드 구현 중
+- 현수님, 재현님 : 발표자료 준비 시작 및 디버깅
 
-작업 필요한 부분 : 세부 UI 및 html, highchart요소 수정 필요
+- 작업 필요한 부분 : 세부 UI 및 html, highchart요소 수정 필요
 
 ---
 
@@ -42,29 +43,11 @@ B반 2조 DATAO팀
 
 - python 분석 코드는 analysis폴더에 각각 .py를 만들고 통합
 
-
-
-#### nav bar 순서
-
-대시보드1 : 플랫폼별 영화 비율
-
-대시보드 2 : 플랫폼별 연령 영화 개수
-
-대시보드 3 : 장르별 영화 검색
-
-대시보드 4 : imdb별 분포
-
-대시보드5 : rotten tomatoes 별 3d 그래프
-
-대시 6 : 산점도매트릭스 파악
-
-표1 : OTT 영화 검색
-
-표2 : 네이버 영화 검색
+  - 각 .py파일은 영어이름 초성(예:송재현 => sjh.py)
 
 ---
 
 
-#### 수정사항
+#### 주의사항
 
-- 운기님 데이터 분석 코드 중 프로젝트 통합으로 이미지 저장 경로 변경되어 코드 수정했습니다.
+- print문 삭제 등 전체 코드 정리했습니다. 반드시 0723 0000 all codes commit 커밋명 확인하고 사용해주세요~! 🙄
