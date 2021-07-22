@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        OTT DataTable
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Age</th>
+                    <th>IMBd</th>
+                    <th>Rotten Tomatoes</th>
+                    <th>Directors</th>
+                    <th>Genres</th>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Runtime</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Title</th>
+                    <th>Year</th>
+                    <th>Age</th>
+                    <th>IMBd</th>
+                    <th>Rotten Tomatoes</th>
+                    <th>Directors</th>
+                    <th>Genres</th>
+                    <th>Country</th>
+                    <th>Language</th>
+                    <th>Runtime</th>
+                </tr>
+            </tfoot>
+            <tbody>
+            {% for p in data %}
+                <tr>
+                    <td>{{p.Title}}</td>
+                    <td>{{p.Year}}</td>
+                    <td>{{p.Age}}</td>
+                    <td>{{p.IMDb}}</td>
+                    <td>{{p.Rotten_Tomatoes}}</td>
+                    <td>{{p.Directors}}</td>
+                    <td>{{p.Genres}}</td>
+                    <td>{{p.Country}}</td>
+                    <td>{{p.Language}}</td>
+                    <td>{{p.Runtime}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="{% static 'js/scripts.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="{% static 'assets/demo/chart-area-demo.js' %}"></script>
+<script src="{% static 'assets/demo/chart-bar-demo.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="{% static 'js/datatables-simple-demo.js' %}"></script>

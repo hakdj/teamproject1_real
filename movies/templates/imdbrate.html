@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+{% load static %}
+    <script>
+    function chart1(data){
+        Highcharts.chart('container1', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Netflix 플랫폼의 IMDB 지수 비율'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                name: 'IMDb',
+                colorByPoint: true,
+                innerSize: '40%',
+                data: data
+            }]
+        });
+    };
+    function chart2(data){
+        Highcharts.chart('container2', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Hulu 플랫폼의 IMDB 지수 비율'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                name: 'IMDb',
+                colorByPoint: true,
+                innerSize: '40%',
+                data: data
+            }]
+        });
+    };
+    function chart3(data){
+        Highcharts.chart('container3', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Prime Video 플랫폼의 IMDB 지수 비율'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                name: 'IMDb',
+                colorByPoint: true,
+                innerSize: '40%',
+                data: data
+            }]
+        });
+    };
+    function chart4(data){
+        Highcharts.chart('container4', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Disney+ 플랫폼의 IMDB 지수 비율'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            accessibility: {
+                point: {
+                    valueSuffix: '%'
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name} 점</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                name: 'IMDb',
+                colorByPoint: true,
+                innerSize: '40%',
+                data: data
+            }]
+        });
+    };
+//--------------------------------------------------------------------------------
+
+    $(document).ready(function(){
+        $.ajax({
+            url:'imrate',
+            data:{'ott':'Netflix'},
+            datatype:'JSON',
+            success:function(data){
+                chart1(data);
+                $.ajax({
+                    url:'imrate',
+                    data:{'ott':'Hulu'},
+                    datatype:'JSON',
+                    success:function(data){
+                        chart2(data);
+                        $.ajax({
+                            url:'imrate',
+                            data:{'ott':'Prime Video'},
+                            datatype:'JSON',
+                            success:function(data){
+                                chart3(data);
+                                $.ajax({
+                                    url:'imrate',
+                                    data:{'ott':'Disney+'},
+                                    datatype:'JSON',
+                                    success:function(data){
+                                        chart4(data);
+                                    }
+                                });
+
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    });
+    </script>
+
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">imdb파이차트2</h1>
+    <p class="mb-4">Chart.js is a third party plugin that is used to generate the charts in this theme.
+        The charts below have been customized - for further customization options, please visit the <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Donut Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Sex</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="container1">
+                    </div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Pclass</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="container2"></div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Embarked</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="container3"></div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Survival by Embarked</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div id="container4"></div>
+                    <hr>
+                    Styling for the donut chart can be found in the
+                    <code>/js/demo/chart-pie-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container-fluid -->>

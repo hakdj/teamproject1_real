@@ -1,0 +1,94 @@
+<!--청하님 차트-->
+<!DOCTYPE html>
+{% load static %}
+<script>
+        function display(data){
+
+
+           Highcharts.chart('container', {
+                chart: {
+                     plotBackgroundColor: null,
+                     plotBorderWidth: 0,
+                     plotShadow: false
+                },
+                title: {
+                     text: 'Number of movies<br>present on<br>different platform',
+                     align: 'center',
+                     verticalAlign: 'middle',
+                     y: 70
+                },
+                tooltip: {
+                     pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                accessibility: {
+                     point: {
+                     valueSuffix: '%'
+                     }
+                },
+                plotOptions: {
+                       pie: {
+                           dataLabels: {
+                                enabled: true,
+                                distance: -50,
+                                style: {
+                                     fontWeight: 'bold',
+                                     color: 'Black'
+                                }
+                           },
+                           startAngle: -90,
+                           endAngle: 90,
+                           center: ['50%', '75%'],
+                           size: '130%'
+                       }
+                },
+                series: [{
+                     type: 'pie',
+                     name: 'Browser share',
+                     innerSize: '50%',
+                     data: data
+                }]
+           });
+        };
+
+
+        $(document).ready(function(){
+           $.ajax({
+                url:'TP1',
+                datatype:'JSON',
+                success: function(data){
+                        display(data)}
+           });
+        });
+
+
+
+</script>
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">MoviesOnStreamingPlatforms Chart</h1>
+    <p class="mb-4">여기는 청하님이 만드신 차트입니다. <a
+            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
+            documentation</a>.</p>
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-xl-8 col-lg-7">
+            <!-- Area Chart -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                </div>
+                <div class="card-body">
+                    <div id="container"></div>
+                    <p><cite>MoviesOnStreamingPlatforms</cite></p>
+                    <hr>
+                    Styling for the area chart can be found in the
+                    <code>/js/demo/chart-area-demo.js</code> file.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
