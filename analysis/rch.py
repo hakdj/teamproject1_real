@@ -52,6 +52,39 @@ class RCH:
 
         return data
 
+    def TPex(self):
+        df = pd.read_csv(DATA_DIRS[0] + '/MoviesOnStreamingPlatforms_updated.csv')
+        df['Country'] = df['Country'].str.split(',')
+
+        df = (df
+              .set_index(['ID', 'Title', 'Year', 'Age', 'IMDb', 'Rotten Tomatoes', 'Netflix', 'Hulu',
+                          'Prime Video', 'Disney+', 'Directors', 'Genres', 'Language', 'Runtime'])['Country']
+              .apply(pd.Series)
+              .stack()
+              .reset_index()
+              .drop('level_14', axis=1)
+              .rename(columns={0: 'Country'}))
+        chains = df['Country'].value_counts()[:20]
+        label = []
+        count =[]
+        for i in chains.index:
+            label.append(i)
+        for j in chains.values:
+            count.append(j)
+
+
+        data =[]
+        for p in range(len(label)):
+            for q in range(len(label)):
+                    fdata = {
+                        'name': label[q],
+                        'y': int(count[q]),
+                        'drilldown': 'null'
+
+                    }
+                    data.append(fdata)
+        return(data)
+
 
 if __name__ == '__main__':
     # RCH().TP32('Netflix');

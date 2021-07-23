@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-
 from movies import views
 
 urlpatterns = [
@@ -28,6 +27,8 @@ urlpatterns = [
     path('ages', views.ages, name='ages'),
     path('ScatterPlot', views.ScatterPlot, name='ScatterPlot'),
     path('sp', views.sp, name='sp'),
+    path('imrate', views.imrate, name='imrate'),
+    path('imdbrate', views.imdbrate, name='imdbrate'),
 
     ## 현수님
     path('tp', views.tp, name='tp'),
@@ -37,12 +38,13 @@ urlpatterns = [
 
     ## 운기님
     path('matrix', views.matrix, name='matrix'),
-    path('imrate', views.imrate, name='imrate'),
-    path('imdbrate', views.imdbrate, name='imdbrate'),
+
 
     ## 청하님
     path('tp1', views.tp1, name='tp1'),
     path('TP1', views.TP1, name='TP1'),
     path('tp32', views.tp32, name='tp32'),
-    path('TP32', views.TP32, name='TP32')
+    path('TP32', views.TP32, name='TP32'),
+    path('tpex', views.tpex, name='tpex'),
+    path('TPex', views.TPex, name='TPex')
 ]

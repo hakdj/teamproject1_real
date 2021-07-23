@@ -54,7 +54,7 @@ def tp(request):
 def chs1(request):
     year = request.GET['year'];
     data = CHS().chs1(year);
-    return HttpResponse(json.dumps(data), content_type='application/json');
+    return HttpResponse(json.dumps(data), content_type='application/json')
 
 
 def tablechs(request):
@@ -108,7 +108,7 @@ def tp1(request):
 
 def TP1(request):
     data = RCH().TP1()
-    return HttpResponse(json.dumps(data), content_type='application/json');
+    return HttpResponse(json.dumps(data), content_type='application/json')
 
 
 def tp32(request):
@@ -122,4 +122,15 @@ def TP32(request):
     ott = request.GET['ott']
     print(ott)
     data = RCH().TP32(ott)
-    return HttpResponse(json.dumps(data), content_type='application/json');
+    return HttpResponse(json.dumps(data), content_type='application/json')
+
+def tpex(request):
+    context = {
+        'section': 'tpex.html'
+    }
+    return render(request, 'index.html', context)
+
+
+def TPex(request):
+    data = RCH().TPex()
+    return HttpResponse(json.dumps(data), content_type='application/json')

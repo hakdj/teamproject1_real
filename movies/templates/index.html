@@ -40,6 +40,9 @@
     <script src="http://code.jquery.com/jquery-1.7.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+
 </head>
 
 <body id="page-top">
@@ -80,14 +83,19 @@
                 <span>CHS1</span></a>
         </li>
         <li class="nav-item active">
+            <a class="nav-link" href="{% url 'tp32' %}">
+                <i class="fas fa-fw fa-chart-area"></i>
+                <span>RCH2</span></a>
+        </li>
+        <li class="nav-item active">
             <a class="nav-link" href="{% url 'ScatterPlot' %}">
                 <i class="fas fa-fw fa-chart-area"></i>
                 <span>SJH2</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="{% url 'tp32' %}">
+            <a class="nav-link" href="{% url 'tpex' %}">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>RCH2</span></a>
+                <span>RCH3</span></a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="{% url 'matrix' %}">
@@ -107,7 +115,7 @@
 
         <li class="nav-item active">
             <a class="nav-link" href="{% url 'tablechs' %}">
-               <i class="fas fa-fw fa-table"></i>
+                <i class="fas fa-fw fa-table"></i>
                 <span>CHS2</span></a>
         </li>
         <li class="nav-item active">
