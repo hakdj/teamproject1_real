@@ -20,7 +20,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="col-auto">
-                                <div class="text-lg font-weight-bold text- text-uppercase mb-1">
+                                <div class="text-lg font-weight-bold text-gray-100 text-uppercase mb-1">
                                     NETFLIX 등록 영화
                                 </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-100">3,560개</div>
@@ -41,7 +41,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="col-auto">
-                                <div class="text-lg font-weight-bold text-uppercase mb-1">
+                                <div class="text-lg font-weight-bold text-gray-100 text-uppercase mb-1">
                                     HULU 등록 영화
                                 </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-100">903개</div>
@@ -82,13 +82,14 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="col-auto">
-                                <div class="text-lg font-weight-bold text-uppercase mb-1">
+                                <div class="text-lg font-weight-bold text-gray-100 text-uppercase mb-1">
                                     DISNEY+ 등록 영화
                                 </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-100">564개</div>
                             </div>
                         </div>
                         <div class="col-auto">
+
                         </div>
                     </div>
                 </div>
@@ -97,10 +98,11 @@
     </div>
 
     <!-- Content Row -->
+
     <div class="row">
 
         <!-- Area Chart -->
-        <div class="col-xl-8 col-lg-5 mb-4">
+        <div class="col-xl-8 col-lg-7 mb-4">
             <div class="card shadow mb-8">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Introduce DATAO</h6>
@@ -151,15 +153,15 @@
                         <canvas id="myPieChart"></canvas>
                     </div>
                     <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Direct
-                        </span>
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Social
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Referral
-                        </span>
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
                     </div>
                 </div>
             </div>
@@ -169,20 +171,20 @@
     <!-- Content Row -->
     <div class="row">
 
-        <!-- Content Column -->
+<!-- 새로운 디즈니 훌루 넷플 프라임 하는 칸-->
         <div class="col-lg-4 mb-4">
-            <!--            platform-->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">DISNEY+</h6>
                 </div>
-                <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
-                    <div class="card-body">
-                        <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
-                             src="{% static 'img/disney.png' %}" alt="...">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4"  style="width: 400px; display: block; margin: 0 auto;"
+                                 src="{% static 'img/disney.png' %}" alt="...">
+                        </div>
                     </div>
-                </div>
                 <div class="card-body">
+
                 </div>
             </div>
 
@@ -190,31 +192,30 @@
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">NETFLIX</h6>
                 </div>
-                <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
-                    <div class="card-body">
-                        <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
-                             src="{% static 'img/netflix.jpg' %}" alt="...">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 400px; display: block; margin: 0 auto;"
+                                 src="{% static 'img/netflix.jpg' %}" alt="...">
+                        </div>
                     </div>
-                </div>
                 <div class="card-body">
+
                 </div>
             </div>
 
         </div>
-
-        <!-- 새로운 디즈니 훌루 넷플 프라임 하는 칸-->
 
         <div class="col-lg-4 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">HULU</h6>
                 </div>
-                <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
-                    <div class="card-body">
-                        <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
-                             src="{% static 'img/hulu.png' %}" alt="...">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 400px; display: block; margin: 0 auto;"
+                                 src="{% static 'img/hulu.png' %}" alt="...">
+                        </div>
                     </div>
-                </div>
                 <div class="card-body">
 
                 </div>
@@ -223,13 +224,14 @@
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">PRIME VIDEO</h6>
                 </div>
-                <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
-                    <div class="card-body">
-                        <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
-                             src="{% static 'img/pvlogo.png' %}" alt="...">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 400px; display: block; margin: 0 auto;"
+                                 src="{% static 'img/pvlogo.png' %}" alt="...">
+                        </div>
                     </div>
-                </div>
                 <div class="card-body">
+
                 </div>
             </div>
         </div>
@@ -249,6 +251,8 @@
                         <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
                              src="{% static 'img/tool2.jpg' %}" alt="...">
                     </div>
+
+
                 </div>
             </div>
 
@@ -265,6 +269,8 @@
                         Bootstrap framework, especially the utility classes.</p>
                 </div>
             </div>
+
         </div>
     </div>
+
 </div>
