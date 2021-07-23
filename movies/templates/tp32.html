@@ -65,7 +65,7 @@ var chart = new Highcharts.Chart({
     },
     zAxis: {
         min: 1900,
-        max: 2100,
+        max: 2030,
         showFirstLabel: false
     },
     legend: {
@@ -155,10 +155,8 @@ var chart = new Highcharts.Chart({
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">MoviesOnStreamingPlatforms Chart</h1>
-    <p class="mb-4">여기는 청하님이 만드신 차트입니다. <a
-            target="_blank" href="https://www.chartjs.org/docs/latest/">official Chart.js
-        documentation</a>.</p>
+    <h1 class="h3 mb-2 text-gray-800">Runtime과 연도별 Rotten Tomato 수치 3D 분포도 </h1>
+    <p class="mb-4">OTT 플랫폼을 선택하여 해당 OTT별 영화의 Rotten Tomato 수치와 Runtime의 분포를 파악하세요.</p>
 
     <!-- Content Row -->
     <div class="row">
@@ -168,7 +166,7 @@ var chart = new Highcharts.Chart({
             <!-- Area Chart -->
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">3D Scatter Plot</h6>
                 </div>
                 <div class="card-body">
                     <select name="ott">
@@ -186,8 +184,28 @@ var chart = new Highcharts.Chart({
                 </div>
             </div>
         </div>
-
+        <div class="col-xl-4 col-lg-5 mb-4">
+            <div class="card shadow mb-8">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">차트 설명</h6>
+                </div>
+                <div class="card-body">
+                    <h6 class="m-0 font-weight-bold text-dark">3D Scatter Plot을 이용한 데이터 분석</h6><br>
+                    <p>선택창에서 플랫폼을 선택하고 'SEARCH'버튼을 클릭하세요.</p>
+                    <p>선택한 OTT에서의 영화 Runtime과 개봉녀도 Rotten Tomato 수치에 따른 분포를 파악할 수 있습니다.</p>
+                    <p>그래프를 클릭 후 움직이는 것으로 그래프를 돌려가며 확인할 수 있습니다.</p>
+                    <p>다른 플랫폼 선택시 분포도가 나타나지 않는다면 새로고침 후 다시 선택해주세요.</p>
+                    <p>
+                    <li>Rotten Tomato : 수치 범위는 0-100% 까지입니다.</li>
+                    <li>Runtime : 영화 상영 시간. 최대 180분(3시간)까지의 영화를 대상으로 합니다.</li>
+                    <li>Year : 영화가 개봉된 년도이며 1900년도부터 2020년도까지의 영화들을 대상으로 합니다.</li>
+                    </p>
+                    <p>그래프를 통해서 대부분의 영화가 100-150분 사이의 Runtime을 가지고 있음을 확인할 수 있습니다.
+                         Rotten 토마토 지수는 대체적으로 골고루 분포하는 편이며 주로 2000년대 이후 영화들이 주로 서비스되고 있음이 확인가능합니다.
+                    </p>
+                    <a target="_blank" rel="nofollow" href="https://github.com/Songgplant">여기에 넣고 싶은 주소를&rarr;</a>
+                </div>
+            </div>
+        </div>
     </div>
-
 </div>
-<!-- /.container-fluid -->

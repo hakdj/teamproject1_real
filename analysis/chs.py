@@ -1,3 +1,4 @@
+
 ## 현수님 part
 
 import matplotlib.pyplot as plt;
@@ -52,7 +53,7 @@ class CHS:
         return data;
 
     def chs3(self):
-        df = pd.read_excel(DATA_DIRS[0] + '//naver.xls', header=0, )
+        df = pd.read_excel(DATA_DIRS[0] + '//naver.xls', header=0)
         df.fillna('-', inplace=True);
         data = [];
         for i in range(0, len(df)):
@@ -68,6 +69,5 @@ class CHS:
 
         return data;
 
-
 if __name__ == '__main__':
-    CHS().chs1(2013);
+    CHS().chs1(2020);

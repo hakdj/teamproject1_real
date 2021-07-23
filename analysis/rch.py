@@ -38,7 +38,7 @@ class RCH:
         df = df.dropna(subset=["Rotten Tomatoes", "Runtime", "Year"]);
         setott = df[ott] == 1;
         setrun = df['Runtime'] <= 180;
-        setyear = df['Year'] >= 2010;
+        setyear = df['Year'] >= 1900;
         x = df[setott & setrun & setyear];
         scatterdata = [];
 
@@ -66,24 +66,23 @@ class RCH:
               .rename(columns={0: 'Country'}))
         chains = df['Country'].value_counts()[:20]
         label = []
-        count =[]
+        count = []
         for i in chains.index:
             label.append(i)
         for j in chains.values:
             count.append(j)
 
-
-        data =[]
+        data = []
         for p in range(len(label)):
             for q in range(len(label)):
-                    fdata = {
-                        'name': label[q],
-                        'y': int(count[q]),
-                        'drilldown': 'null'
+                fdata = {
+                    'name': label[q],
+                    'y': int(count[q]),
+                    'drilldown': 'null'
 
-                    }
-                    data.append(fdata)
-        return(data)
+                }
+                data.append(fdata)
+        return (data)
 
 
 if __name__ == '__main__':
