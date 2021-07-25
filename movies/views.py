@@ -9,7 +9,7 @@ from analysis.rch import RCH
 from analysis.cwk import CorMatrix
 
 
-## 페이지 메인 세션
+## 웹페이지 Main Center
 def index(request):
     return render(request, 'index.html')
 

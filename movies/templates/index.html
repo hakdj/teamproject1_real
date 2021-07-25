@@ -22,11 +22,7 @@
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-    <!--JavaScript-->
-    <script type="text/javascript"
-            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9bc86d56cd2699acaa4b709fe9368c9b"></script>
-
-    <!--Day19_dashboard에서 발췌: 꼭 head에 적어야 해서 여기에 씀-->
+    <!--Table 구현-->
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="{% static 'css/styles.css' %}" rel="stylesheet"/>
 
@@ -61,7 +57,7 @@
             <div class="sidebar-brand-text mx-3">DATAO</div>
         </a>
 
-        <!-- Divider -->
+        <!-- DATAO Nav Bar -->
         <hr class="sidebar-divider my-0">
         <div class="sidebar-heading">Title</div>
         <!-- Nav Item - Dashboard -->
@@ -130,8 +126,6 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
-
     </ul>
     <!-- End of Sidebar -->
 
@@ -343,9 +337,7 @@
                             </a>
                         </div>
                     </li>
-
                 </ul>
-
             </nav>
             <!-- End of Topbar -->
 
@@ -356,7 +348,6 @@
             {% include 'main_center.html' %}
             {% endif %}
             <!-- /.container-fluid -->
-
         </div>
         <!-- End of Main Content -->
 

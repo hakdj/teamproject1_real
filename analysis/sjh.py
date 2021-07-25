@@ -43,7 +43,8 @@ class MyAnalysis:
         x = df[setott & setrun]
 
         scatterdata = []
-        colors = {'Netflix': 'rgba(223, 83, 83, .5)', 'Hulu': 'rgba(71, 209, 71, .5)', 'Prime Video': 'rgba(119, 152, 191, .5)',
+        colors = {'Netflix': 'rgba(223, 83, 83, .5)', 'Hulu': 'rgba(71, 209, 71, .5)',
+                  'Prime Video': 'rgba(119, 152, 191, .5)',
                   'Disney+': 'rgba(0, 0, 230, .5)'}
 
         for i in range(len(x)):

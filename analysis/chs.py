@@ -1,4 +1,3 @@
-
 ## 현수님 part
 
 import matplotlib.pyplot as plt;
@@ -68,6 +67,7 @@ class CHS:
             data.append(naver);
 
         return data;
+
 
 if __name__ == '__main__':
     CHS().chs1(2020);

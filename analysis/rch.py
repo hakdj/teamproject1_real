@@ -79,7 +79,6 @@ class RCH:
                     'name': label[q],
                     'y': int(count[q]),
                     'drilldown': 'null'
-
                 }
                 data.append(fdata)
         return (data)
