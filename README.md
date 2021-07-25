@@ -52,7 +52,7 @@
 - movies : Django app name 
 
 - 데이터 분석 코드는 analysis directory에 팀원 이름 초성으로 설정
-- navermovie_crawling.ipynb : chromedirver.exe와 함께 실행하고자 하는 경로에서 Anaconda&jupyternotebook 으로 실행
+- navermoviecrawling_final.ipynb : chromedirver.exe와 함께 실행하고자 하는 경로에서 Anaconda&jupyternotebook 으로 실행
 
 
 
