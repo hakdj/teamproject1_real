@@ -8,7 +8,8 @@
 
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">산점도 행렬 분석 결과</h1>
-    <p class="mb-4">변수: 상영시간, 로튼 토마토, 평점, 영화개봉년수</p>
+    <p class="mb-4">데이터 셋의 변수를 선택하여 상관관계를 한번에 파악할 수 있는 산점도 매트릭스입니다. 아래 참고 설명을 따라 결과를 해석할 수 있습니다.<br>
+        사용변수: 상영시간, 로튼 토마토, 평점, 영화개봉년수</p>
 
     <!-- Content Row -->
     <div class="row">
@@ -22,7 +23,7 @@
                     <div id="container2">
                         <img src="/static/img/matrix.png" width=800 height=800 alt=" ">
                     </div>
-                    <p><cite>MoviesOnStreamingPlatforms</cite></p>
+                    <p><cite>Used Columns : Runtime, Rotten Tomatoes, IMDb, Year</cite></p>
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
                     <li>2단계: 그룹 관련 패턴 확인</li>
                     <li>3단계: 다른 패턴 찾기</li>
                     </p>
-                    <h6 class="m-0 font-weight-bold text-dark">1단계: 모형 관계 검색 및 강도 평가</h6><br>
+                    <h6 class="m-0 font-weight-bold text-dark">[ 1단계: 모형 관계 검색 및 강도 평가 ]</h6><br>
 
                     <p>변수 쌍 사이의 모형 관계를 찾아봅니다. 어느 모형 관계가 데이터에 가장 적합한지 확인하고 관계의 강도를 평가합니다.
                         모형이 데이터에 적합한 경우 해당 모형에 대한 회귀 방정식을 사용하여 데이터를 설명할 수 있습니다.
@@ -86,7 +87,7 @@
                     <figure class="fig group - cols2 ">
                         <div class="figgroup float">
                             <img class="image" src="/static/img/scatterplot_weak_positive_relationship.png">
-                         <h6 class="figGroupTitle">약한 관계</h6></div>
+                            <h6 class="figGroupTitle">약한 관계</h6></div>
                         <div class="figgroup float">
                             <img class="image" src="/static/img/scatterplot_strong_positive_relationship.png">
                             <h6 class="figGroupTitle">강한 관계</h6></div>
@@ -97,7 +98,7 @@
                     <div id="step-2-look-for-group-related-patterns" lang="ko-KR" class="topic concept mtbconcept">
                     </div>
 
-                    <h6 class="m-0 font-weight-bold text-dark">2단계: 그룹 관련 패턴 확인</h6><br>
+                    <h6 class="m-0 font-weight-bold text-dark">[ 2단계: 그룹 관련 패턴 확인 ]</h6><br>
                     <p>산점도 행렬에 그룹이 있는 경우 그룹 관련 패턴을 찾아볼 수 있습니다. 관측치 그룹 간 x-y 관계의 차이를 확인합니다.
                         그래프에 그룹화 변수를 포함하지 않더라도 의미 있는 그룹을 식별할 수 있습니다. 의미 있는 그룹을 찾으면 데이터를 더 정확하게 설명할 수 있습니다.
                         다음 그래프는 그룹 관련 패턴의 예입니다.</p>
@@ -121,7 +122,7 @@
                     <p class="p">데이터에 그룹이 포함되어 있다고 생각되면 그래프에 그룹화 변수를 추가하여 그룹을 시각화할 수 있습니다.
                         데이터 점을 두 번 클릭하고 <span class="ph uicontrol - current ">그룹</span> 탭을 선택하십시오. </p>
 
-                    <h6 class="m-0 font-weight-bold text-dark">3단계: 다른 패턴 찾기</h6><br>
+                    <h6 class="m-0 font-weight-bold text-dark">[ 3단계: 다른 패턴 찾기 ]</h6><br>
                     <p>특이치는 데이터의 비정상적인 조건을 나타낼 수도 있습니다. 시간 기반 추세는 변화하는 데이터 조건을 나타낼 수도 있습니다.
                         특이치
                         다른 데이터 값에서 멀리 떨어져 있는 데이터 값인 특이치는 결과에 크게 영향을 미칠 수 있습니다.</p>
@@ -131,24 +132,25 @@
                                 <div> 모든 데이터 입력 또는 측정 오류를 수정하십시오.
                                     비정상적인 일회성 사건과 연관된 데이터 값을 삭제해 보십시오(특수 원인). 그런 다음 분석을 반복하십시오. 시간 기반 추세
                                     X 변수에 순서대로 기록된 일련의 시간 또는 데이터 값이 포함된 경우 시간 기반 추세를 찾습니다.
-                                    <!--산점도에 연결 선을 추가하려면 산점도를 활성화한
-                                    상태에서-->
-                                    <div class="figgroup float"><img class="image" src="/static/img/time_series_plot_time_cycling.png">
+                                    <div class="figgroup float"><img class="image"
+                                                                     src="/static/img/time_series_plot_time_cycling.png">
                                         <h6 class="figGroupTitle">주기 추세</h6>
-                                    <div class="figgroup float"><img class="image" src="/static/img/time_series_plot_checK_data_for_patterns_over_time.png">
-                                        <h6 class="figGroupTitle">증가 추세</h6></div>
-                                    <div class="clearing"></div>
+                                        <div class="figgroup float"><img class="image"
+                                                                         src="/static/img/time_series_plot_checK_data_for_patterns_over_time.png">
+                                            <h6 class="figGroupTitle">증가 추세</h6></div>
+                                        <div class="clearing"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/modernizr-2.6.2.js"></script>
-                        <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/MC.siteSearch.js"></script>
-                        <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/minitabCommon.js"></script>
-                        <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/support.js"></script>
+                        </div>
                     </div>
                 </div>
             </div>
+            <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/modernizr-2.6.2.js"></script>
+            <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/MC.siteSearch.js"></script>
+            <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/minitabCommon.js"></script>
+            <script type="text/javascript" src="/ko-kr/minitab/18/themes/js/support.js"></script>
         </div>
     </div>
-    <!-- /.container-fluid -->
+</div>
