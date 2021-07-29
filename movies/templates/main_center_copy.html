@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+{% load static %}
+
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h2 mb-0 text-gray-800">Hello, DATAO Page!</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card bg-gradient-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="col-auto">
+                                <div class="text-lg font-weight-bold text- text-uppercase mb-1">
+                                    NETFLIX 등록 영화
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-100">3,560개</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="col-auto">
+                                <div class="text-lg font-weight-bold text-success text-uppercase mb-1">
+                                    HULU 등록 영화
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">903개</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="col-auto">
+                                <div class="text-lg font-weight-bold text-primary mb-1">PRIME VIDEO 등록 영화
+                                </div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">12,354개</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="col-auto">
+                                <div class="text-lg font-weight-bold text-warning text-uppercase mb-1">
+                                    DISNEY+ 등록 영화
+                                </div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">564개</div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-5 mb-4">
+            <div class="card shadow mb-8">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Introduce DATAO</h6>
+                </div>
+                <div class="card-body">
+                    <h6 class="m-0 font-weight-bold text-dark">Introduce DATAO</h6><br>
+                    <p>어쩌구저쩌구 소개</p>
+                    <p>
+                    <li>어쩌구</li>
+                    <li>어쩌구</li>
+                    <li>어쩌구</li>
+                    </p>
+                    <p>Before working with this theme, you should become familiar with the
+                        Bootstrap framework, especially the utility classes.</p>
+                    <p>두 문단 가능 ou should become familiar with the
+                        Bootstrap framework, especially the utility classes.</p>
+                    <p>근데 이 창 높이는 어떻게 조절하는 걸까요~?</p>
+                    <a target="_blank" rel="nofollow" href="https://github.com/Songgplant">여기에우리의 결과물 주소를&rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                             aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Dropdown Header:</div>
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-pie pt-4 pb-2">
+                        <canvas id="myPieChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Direct
+                                        </span>
+                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Social
+                                        </span>
+                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Referral
+                                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Content Column -->
+        <div class="col-lg-8 mb-4">
+<!--            platform-->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                </div>
+                <div class="card-body">
+
+                </div>
+            </div>
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                </div>
+                <div class="card-body">
+
+                </div>
+            </div>
+
+            <!-- Color System -->
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            Disney
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
+                                 src="{% static 'img/disney.png' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            Hulu
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
+                                 src="{% static 'img/hulu.png' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            Netflix
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
+                                 src="{% static 'img/netflix.jpg' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="text-lg font-weight-bold text-black text-uppercase mb-1">
+                        <div class="card-body">
+                            Prime video
+                            <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
+                                 src="{% static 'img/pvlogo.png' %}" alt="...">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="col-lg-4 mb-4">
+
+            <!-- DATAO's tool -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">DATAO's tool</h6>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
+                             src="{% static 'img/tool.jpg' %}" alt="...">
+                        <img class="img-fluid px-3 px-sm-1 mt-3 mb-4" style="width: 40rem;"
+                             src="{% static 'img/tool2.jpg' %}" alt="...">
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!-- Approach -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                </div>
+                <div class="card-body">
+                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
+                        CSS bloat and poor page performance. Custom CSS classes are used to create
+                        custom components and custom utility classes.</p>
+                    <p class="mb-0">Before working with this theme, you should become familiar with the
+                        Bootstrap framework, especially the utility classes.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
